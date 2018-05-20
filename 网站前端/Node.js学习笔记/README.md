@@ -5,6 +5,7 @@
 1. [Node.js的运行机制](#nodejs的运行机制)
 1. [npm](#npm)
 1. [CommonJS规范](#commonjs规范)
+1. [Node.js原生模块](#nodejs原生模块)
 
 ---
 ### nvm更新Node.js版本
@@ -264,6 +265,8 @@
 ### CommonJS规范
 >参考[阮一峰：require() 源码解读](http://www.ruanyifeng.com/blog/2015/05/require.html)、[CommonJS 详细介绍](https://neveryu.github.io/2017/03/07/commonjs/)、[阮一峰：JavaScript 模块的循环加载](http://www.ruanyifeng.com/blog/2015/11/circular-dependency.html)。
 
+一个模块就是一个Node.js文件。
+
 - 概述
 
     1. 执行阶段（运行时）进行模块加载。
@@ -337,6 +340,12 @@
 
     - 查找逻辑：
 
+        <details>
+        <summary>示例图</summary>
+
+        ![Node.js的require流程](./images/nodejs-require-1.jpg)
+        </details>
+
         1. 如果 X 以`/`、`./`或`../`开头
 
             1. 根据 X 所在的父模块，确定 X 的绝对路径。
@@ -398,3 +407,9 @@
         7. `module.paths`：返回一个数组，模块文件默认搜索目录（`某某/node_modules/`）。
 
     >所有模块都是Node内部`Module`构建函数的实例。
+
+### Node.js原生模块
+1. `events`
+1. `http`
+1. `url`
+1. `fs`
