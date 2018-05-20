@@ -2,6 +2,12 @@
 
 >webpack: module building system.
 
+## 目录
+1. [总结](#总结)
+1. [`webpack.config.js`](#webpackconfigjs)
+
+---
+### 总结
 1. 能使用各种方式表达依赖关系
 
     CommonJS、ES module、AMD、CSS的`@import`、样式的`url()`、HTML的`<img src="">`。都被转化为CommonJS规范的实现。
@@ -15,3 +21,10 @@
 
     webpack自身只理解JS，使用`loader`把所有类型的文件（链式）转换为模块。
 3. 从入口起点（`entry`）开始进入文件进行解析，递归地构建一个依赖图，这个依赖图包含着应用程序所需的每个模块，然后将所有这些模块打包为少量的bundle（通常只有一个）由浏览器加载。
+
+### `webpack.config.js`
+1. `entry`：定义整个编译过程的起点
+2. `output`：定义整个编译过程的终点
+3. `module`：加载器定义模块module的处理方式
+4. `plugin`：对编译完成后的内容进行二度加工
+5. `resolve.alias`：定义路径的别名
