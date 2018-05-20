@@ -1,13 +1,13 @@
 # webpack使用
 
->webpack: module building system.
-
 ## 目录
 1. [总结](#总结)
 1. [`webpack.config.js`](#webpackconfigjs)
 
 ---
 ### 总结
+>webpack: module building system.
+
 1. 能使用各种方式表达依赖关系
 
     CommonJS、ES module、AMD、CSS的`@import`、样式的`url()`、HTML的`<img src="">`。都被转化为CommonJS规范的实现。
