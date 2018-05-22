@@ -30,3 +30,9 @@
     5. `resolve.alias`：定义路径的别名
 
 ### `webpack.config.js`
+1. `webpack-dev-server`的热更新配置：`devServer.hot: true`
+
+    利用websocket实现，websocket-server识别到html、css和js的改变，就向websocket-client发送一个消息，websocket-client判断如果是html和css就操作dom，实现局部刷新，如果是js就整体刷新。
+2. 插件`DefinePlugin`在构建结束后向项目代码中注入变量：`new webpack.DefinePlugin({键-值})`
+
+    若项目代码中要使用的Node的环境变量，建议都用此方式注入后再使用，而不要直接使用由webpack额外处理的Node环境变量。
