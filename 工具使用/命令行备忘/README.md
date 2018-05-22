@@ -79,3 +79,11 @@
 
     . 路径名/文件名.sh
     ```
+12. 开机自动运行的脚本
+
+    ```bash
+    vi ~/.bash_profile  # macOS
+    # 比如可以把定义环境变量放在里面：export NODE_ENV=development
+
+    # source 脚本   # 当前运行一遍
+    ```
