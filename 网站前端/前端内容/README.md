@@ -589,3 +589,26 @@ JavaScript ＝ ECMAScript + 宿主环境提供的API。
 
 1. [CommonJS规范](https://github.com/realgeoffrey/knowledge/blob/master/网站前端/Node.js学习笔记/README.md#commonjs规范)。
 2. [ES6 Module](https://github.com/realgeoffrey/knowledge/blob/master/网站前端/前端内容/标准库文档.md#ecmascript-2015es6新增)的14。
+3. UMD规范的简单示例：
+
+    ```javascript
+    // 以jQuery为例
+    (function (root, factory) {
+      if (typeof define === 'function' && define.amd) {
+        // AMD
+        define(['jquery'], factory)
+      } else if (typeof exports === 'object') {
+        // Node, CommonJS-like
+        module.exports = factory(require('jquery'))
+      } else {
+        // Browser globals (root is window)
+        root.returnExports = factory(root.jQuery)
+      }
+    }(this, function ($) {
+      //    methods
+      function myFunc () {}
+
+      //    exposed public method
+      return myFunc
+    }))
+    ```
