@@ -10,7 +10,7 @@
 
 1. 能使用各种方式表达依赖关系
 
-    CommonJS、ES module、AMD、CSS的`@import`、样式的`url()`、HTML的`<img src="">`。都被转化为CommonJS规范的实现。
+    CommonJS、ES6 module、AMD、CSS的`@import`、样式的`url()`、HTML的`<img src="">`。都被转化为CommonJS规范的实现。
 
     >```javascript
     >import list from './list';
